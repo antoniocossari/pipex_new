@@ -1,0 +1,37 @@
+# Executables
+pipex
+
+# Object files
+obj/
+*.o
+
+# Libraries
+*.a
+
+# Marker files
+.mandatory
+.bonus
+
+# Test files
+input.txt
+output.txt
+.heredoc_tmp
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+
+# Backup files
+*~
+*.bak
+*.backup
+
+# OS
+.DS_Store
+Thumbs.db
