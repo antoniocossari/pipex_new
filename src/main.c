@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 13:28:30 by acossari          #+#    #+#             */
-/*   Updated: 2025/10/02 21:13:31 by acossari         ###   ########.fr       */
+/*   Updated: 2025/10/11 19:12:34 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main(int argc, char **argv, char **envp)
 	if (!parse_arguments(&data, argc, argv))
 		return (exit_with_error(&data, "pipex: Invalid arguments\n"));
 	data.env_paths = get_env_paths(envp);
-	//if (!data.env_paths)
-	//	return (exit_with_error(&data, "pipex: Memory allocation failed\n"));
 	exit_code = execute_pipeline(&data, envp);
 	cleanup_pipex(&data);
 	return (exit_code);
