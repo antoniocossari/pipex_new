@@ -3,68 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   path_resolution.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 13:21:00 by acossari          #+#    #+#             */
-/*   Updated: 2025/10/02 21:00:27 by acossari         ###   ########.fr       */
+/*   Updated: 2025/10/11 12:50:37 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-
-// /*
-// ** Helper to duplicate fallback paths into allocated array
-// **
-// ** @param paths Array to fill
-// ** @param fallback Array of fallback strings
-// ** @param len Number of fallback strings
-// ** @return 1 on success, 0 on allocation failure
-// */
-
-// static int	create_path_array(char **paths, const char **fallback, int len)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		paths[i] = ft_strdup(fallback[i]);
-// 		if (!paths[i])
-// 		{
-// 			paths[i] = NULL;
-// 			free_string_array(paths);
-// 			return (0);
-// 		}
-// 		i++;
-// 	}
-// 	paths[i] = NULL;
-// 	return (1);
-// }
-
-
-// /*
-// ** Create default PATH directories when PATH env var not found
-// **
-// ** @return Malloc'd array of default paths, or NULL on allocation failure
-// */
-
-// static char	**create_default_paths(void)
-// {
-// 	const char			*fallback[] = {"/usr/local/bin", "/usr/bin", "/bin",
-// 		"/usr/sbin", "/sbin", NULL};
-// 	char				**paths;
-// 	int					len;
-
-// 	len = 0;
-// 	while (fallback[len])
-// 		len++;
-// 	paths = malloc(sizeof(char *) * (len + 1));
-// 	if (!paths)
-// 		return (NULL);
-// 	if (!create_path_array(paths, fallback, len))
-// 		return (NULL);
-// 	return (paths);
-// }
 
 /**
  * Extract PATH directories from environment variables
@@ -132,7 +78,6 @@ char	*find_command_path(const char *cmd, char **env_paths)
 	char	*full_path;
 	size_t	i;
 
-	// Adesso il path puo essere NULL
 	if (!env_paths)
 		return (NULL);
 	i = 0;

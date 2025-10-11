@@ -24,9 +24,6 @@ output.txt
 *.swo
 *~
 
-# Claude Code
-.claude/
-
 # Backup files
 *~
 *.bak
